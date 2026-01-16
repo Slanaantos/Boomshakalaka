@@ -123,14 +123,50 @@ export default function LolitaShowcase() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-[#FDF5F2]">
-        <div className="container mx-auto">
+      <section className="relative py-20 px-4 bg-[#FDF5F2] overflow-hidden">
+        {/* Floating decorative elements */}
+        <motion.div
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 right-10 opacity-30"
+        >
+          <img
+            src="https://lolitacriativa.com.br/wp-content/uploads/2025/07/3-line-detail.png"
+            alt="Decorative lines"
+            className="w-24 h-24"
+          />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-20 left-10 opacity-30"
+        >
+          <img
+            src="https://lolitacriativa.com.br/wp-content/uploads/2025/07/rainbow-detail.png"
+            alt="Rainbow detail"
+            className="w-32 h-32"
+          />
+        </motion.div>
+
+        <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+              >
+                <img
+                  src="https://lolitacriativa.com.br/wp-content/uploads/2025/07/logo-cor-png-e1753913074836.png"
+                  alt="Lolita Criativa"
+                  className="h-16 md:h-20"
+                />
+              </motion.div>
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-6 h-6 text-[#E9C4B6]" />
                 <span className="text-[#62544C]/70 uppercase text-sm tracking-wider">
@@ -194,21 +230,28 @@ export default function LolitaShowcase() {
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-square overflow-hidden rounded-2xl mb-4">
-                  <img
+                <div className="relative aspect-square overflow-hidden rounded-2xl mb-4 shadow-md group-hover:shadow-2xl transition-shadow duration-500">
+                  <motion.img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                   />
-                  <div className="absolute inset-0 bg-[#62544C]/20 group-hover:bg-[#62544C]/10 transition-colors" />
+                  <motion.div
+                    initial={{ opacity: 0.2 }}
+                    whileHover={{ opacity: 0 }}
+                    className="absolute inset-0 bg-[#62544C]/20"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#62544C] mb-1">{category.name}</h3>
+                <h3 className="text-xl font-bold text-[#62544C] mb-1 group-hover:text-[#E9C4B6] transition-colors">{category.name}</h3>
                 <p className="text-[#62544C]/60">{category.description}</p>
               </motion.div>
             ))}

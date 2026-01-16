@@ -121,9 +121,9 @@ export default function GenerosoShowcase() {
                 href="https://wa.me/5511999999999?text=Olá! Gostaria de alugar um Can-Am Spyder"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 107, 0, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block px-10 py-4 bg-[#FF6B00] text-white font-bold text-lg rounded-lg hover:bg-[#E65F00] transition-colors shadow-lg"
+                className="inline-block px-10 py-4 bg-[#FF6B00] text-white font-bold text-lg rounded-lg hover:bg-[#E65F00] transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(255,107,0,0.5)]"
               >
                 Quero Alugar
               </motion.a>
@@ -135,22 +135,30 @@ export default function GenerosoShowcase() {
               transition={{ duration: 0.6 }}
               className="grid grid-cols-2 gap-4"
             >
-              <div className="col-span-2">
+              <motion.div
+                className="col-span-2"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
                 <img
-                  src="https://generosolocacoes.com.br/wp-content/uploads/2024/05/spyder-laranja.jpg"
-                  alt="Can-Am Spyder Laranja"
+                  src="https://generosolocacoes.com.br/wp-content/uploads/elementor/thumbs/Front-action-r74k1y9cgb7yaibzhftovos2byc15etcmtjlzupn70.jpg"
+                  alt="Can-Am Spyder em ação"
                   className="w-full h-64 object-cover rounded-lg shadow-xl"
                 />
-              </div>
-              <img
-                src="https://generosolocacoes.com.br/wp-content/uploads/2024/05/spyder-estrada.jpg"
+              </motion.div>
+              <motion.img
+                src="https://generosolocacoes.com.br/wp-content/uploads/elementor/thumbs/B9724776356Z.1_20201001104104_000GDOGNPU65.1-0-r74k1wdo2n3n1bcebmnifr7b60j8mecv7p0v8g0m2g.jpg"
                 alt="Spyder na estrada"
                 className="w-full h-48 object-cover rounded-lg shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               />
-              <img
+              <motion.img
                 src="https://generosolocacoes.com.br/wp-content/uploads/2024/05/spyder-preto.jpg"
                 alt="Can-Am Spyder Preto"
                 className="w-full h-48 object-cover rounded-lg shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               />
             </motion.div>
           </div>
@@ -216,14 +224,20 @@ export default function GenerosoShowcase() {
             {scenarios.map((scenario, index) => (
               <motion.div
                 key={scenario.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group p-8 rounded-xl bg-white border-2 border-black/10 hover:border-[#FF6B00] hover:shadow-xl transition-all duration-300"
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(255,107,0,0.15)" }}
+                className="group p-8 rounded-xl bg-white border-2 border-black/10 hover:border-[#FF6B00] transition-all duration-300 cursor-pointer"
               >
-                <scenario.icon className="w-12 h-12 text-[#CC9955] mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-black mb-2">{scenario.title}</h3>
+                <motion.div
+                  whileHover={{ scale: 1.15, filter: "drop-shadow(0 0 8px rgba(255,107,0,0.5))" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <scenario.icon className="w-12 h-12 text-[#CC9955] mb-4" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#FF6B00] transition-colors">{scenario.title}</h3>
                 <p className="text-black/70">{scenario.description}</p>
               </motion.div>
             ))}
