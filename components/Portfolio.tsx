@@ -6,44 +6,34 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Dashboard de Gestão SaaS",
-    category: "SaaS Development",
-    description: "Plataforma completa de gestão com dashboards em tempo real, autenticação e analytics avançados.",
-    image: "/projects/dashboard.jpg",
-    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
-    gradient: "from-accent to-blue-500",
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Sistema de Atendimento IA",
-    category: "n8n Automation",
-    description: "Automação completa de atendimento usando n8n, IA e integrações com WhatsApp e CRM.",
-    image: "/projects/automation.jpg",
-    stack: ["n8n", "OpenAI", "WhatsApp API", "PostgreSQL"],
+    title: "Lee F Alive",
+    category: "Web Design",
+    description: "Redesign completo focado em performance e experiência do usuário, mantendo a identidade visual original.",
+    image: "/images/portfolio/leef/hero.jpg",
+    stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
     gradient: "from-purple-500 to-pink-500",
-    link: "#",
-    github: "#",
+    link: "/portfolio/leef/",
+    github: null,
   },
   {
-    title: "E-commerce de Alta Performance",
+    title: "Generoso Locações",
     category: "Web Performance",
-    description: "Loja online com 100/100 no PageSpeed, SEO otimizado e conversão aumentada em 300%.",
-    image: "/projects/ecommerce.jpg",
-    stack: ["Next.js", "Stripe", "Prisma", "Vercel"],
+    description: "Landing page moderna e otimizada para conversão, com foco em clareza e usabilidade.",
+    image: "/images/portfolio/generoso/hero.jpg",
+    stack: ["Next.js 15", "TypeScript", "Tailwind CSS"],
     gradient: "from-emerald-500 to-teal-500",
-    link: "#",
-    github: "#",
+    link: "/portfolio/generoso/",
+    github: null,
   },
   {
-    title: "Pipeline de Marketing Automation",
-    category: "n8n Automation",
-    description: "Automação de campanhas, lead scoring e integração com múltiplas plataformas de marketing.",
-    image: "/projects/marketing.jpg",
-    stack: ["n8n", "Google Sheets", "SendGrid", "Webhooks"],
-    gradient: "from-orange-500 to-red-500",
-    link: "#",
-    github: "#",
+    title: "Lolita Criativa",
+    category: "Creative Design",
+    description: "Redesign criativo e impactante, destacando portfolio e serviços com animações elegantes.",
+    image: "/images/portfolio/lolita/hero.jpg",
+    stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
+    gradient: "from-accent to-blue-500",
+    link: "/portfolio/lolita/",
+    github: null,
   },
 ];
 
@@ -97,13 +87,15 @@ export default function Portfolio() {
                   >
                     <ExternalLink className="w-5 h-5 text-white" />
                   </a>
-                  <a
-                    href={project.github}
-                    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                    aria-label="View on GitHub"
-                  >
-                    <Github className="w-5 h-5 text-white" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                      aria-label="View on GitHub"
+                    >
+                      <Github className="w-5 h-5 text-white" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Category Badge */}
