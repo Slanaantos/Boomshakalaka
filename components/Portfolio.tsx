@@ -6,33 +6,33 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Lee F Alive",
-    category: "Web Design",
-    description: "Redesign completo focado em performance e experiência do usuário, mantendo a identidade visual original.",
-    image: "/images/portfolio/leef/hero.jpg",
+    title: "Urban Style",
+    category: "E-commerce Streetwear",
+    description: "Loja virtual moderna com foco em streetwear premium, animações impactantes e experiência de compra fluida.",
+    image: "/images/portfolio/urban/hero.jpg",
     stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
-    gradient: "from-purple-500 to-pink-500",
-    link: "/portfolio/leef/",
+    gradient: "from-yellow-500 to-orange-500",
+    link: "/portfolio/urban/",
     github: null,
   },
   {
-    title: "Generoso Locações",
-    category: "Web Performance",
-    description: "Landing page moderna e otimizada para conversão, com foco em clareza e usabilidade.",
-    image: "/images/portfolio/generoso/hero.jpg",
-    stack: ["Next.js 15", "TypeScript", "Tailwind CSS"],
-    gradient: "from-emerald-500 to-teal-500",
-    link: "/portfolio/generoso/",
+    title: "Cuesta Adventure",
+    category: "Turismo & Aventura",
+    description: "Landing page dinâmica para passeios off-road na Cuesta de Botucatu com galeria interativa e sistema de reservas.",
+    image: "/images/portfolio/cuesta/hero.jpg",
+    stack: ["Next.js 15", "TypeScript", "Framer Motion"],
+    gradient: "from-orange-600 to-amber-500",
+    link: "/portfolio/cuesta/",
     github: null,
   },
   {
-    title: "Lolita Criativa",
-    category: "Creative Design",
-    description: "Redesign criativo e impactante, destacando portfolio e serviços com animações elegantes.",
-    image: "/images/portfolio/lolita/hero.jpg",
+    title: "Bella Tavola",
+    category: "Gastronomia Premium",
+    description: "Website elegante para restaurante italiano autêntico, destacando menu gourmet e ambiente sofisticado.",
+    image: "/images/portfolio/bella/hero.jpg",
     stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
-    gradient: "from-accent to-blue-500",
-    link: "/portfolio/lolita/",
+    gradient: "from-amber-600 to-yellow-500",
+    link: "/portfolio/bella/",
     github: null,
   },
 ];
@@ -65,37 +65,28 @@ export default function Portfolio() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 card-hover"
+              className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 card-hover cursor-pointer block"
             >
               {/* Image Placeholder with Gradient */}
               <div className={`relative h-64 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300" />
 
-                {/* Project Links (visible on hover) */}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                    aria-label="View project"
-                  >
-                    <ExternalLink className="w-5 h-5 text-white" />
-                  </a>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      className="p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                      aria-label="View on GitHub"
-                    >
-                      <Github className="w-5 h-5 text-white" />
-                    </a>
-                  )}
+                {/* View Project Button (visible on hover) */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="px-6 py-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold flex items-center gap-2">
+                    <ExternalLink className="w-5 h-5" />
+                    Ver Projeto
+                  </div>
                 </div>
 
                 {/* Category Badge */}
@@ -131,7 +122,7 @@ export default function Portfolio() {
                 className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br ${project.gradient} blur-2xl -z-10`}
                 style={{ transform: 'scale(0.8)' }}
               />
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
