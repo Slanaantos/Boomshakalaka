@@ -1,30 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ShoppingBag, Package, Leaf, Sparkles } from "lucide-react";
 import Link from "next/link";
 import DemoBadge from "@/components/Demobadge";
+import { useRef } from "react";
 
 const products = [
   {
     name: "Be Leef College Hat",
     price: "R$ 89,90",
-    image: "https://leefalive.com/wp-content/uploads/2025/09/BONE-PRETO-768x1024.jpg",
+    image: "https://leefalive.com/wp-content/uploads/2025/09/BONE-PRETO.png",
   },
   {
     name: "Gorro Pescador Basic",
     price: "R$ 79,90",
-    image: "https://leefalive.com/wp-content/uploads/2023/12/GORRO-PESCADOR-768x1024.jpg",
+    image: "https://leefalive.com/wp-content/uploads/2023/12/GORRO-PESCADOR.png",
   },
   {
     name: "Camiseta Basic Black",
     price: "R$ 69,90",
-    image: "https://leefalive.com/wp-content/uploads/2025/09/CAMISETA-PRETA-768x1024.jpg",
+    image: "https://leefalive.com/wp-content/uploads/2025/09/CAMISETA-PRETA.png",
   },
   {
     name: "Camiseta Basic Off-White",
     price: "R$ 69,90",
-    image: "https://leefalive.com/wp-content/uploads/2025/09/CAMISETA-OFF-768x1024.jpg",
+    image: "https://leefalive.com/wp-content/uploads/2025/09/CAMISETA-OFF-WHITE.png",
   },
   {
     name: "Bermuda Basic Off-White",
@@ -46,6 +47,14 @@ const benefits = [
 ];
 
 export default function LeefShowcase() {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
   return (
     <div className="min-h-screen bg-[#F9F5EE]">
       <DemoBadge />
@@ -61,10 +70,13 @@ export default function LeefShowcase() {
         </Link>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section with Parallax */}
+      <section ref={heroRef} className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600')] bg-cover bg-center" />
+        <motion.div
+          style={{ y, opacity }}
+          className="absolute inset-0 bg-[url('https://leefalive.com/wp-content/uploads/2025/09/banner-site.jpg')] bg-cover bg-center"
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -123,21 +135,35 @@ export default function LeefShowcase() {
             {products.map((product, index) => (
               <motion.div
                 key={product.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-4">
-                  <img
+                <div className="relative aspect-[3/4] overflow-hidden bg-[#F9F5EE] mb-4 rounded-lg shadow-sm group-hover:shadow-xl transition-shadow duration-500">
+                  <motion.img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">{product.name}</h3>
-                <p className="text-xl font-bold text-[#1A4242]">{product.price}</p>
+                <h3 className="text-lg font-semibold text-black mb-2 group-hover:text-[#1A4242] transition-colors">{product.name}</h3>
+                <motion.p
+                  initial={{ opacity: 0.8 }}
+                  whileHover={{ opacity: 1, scale: 1.05 }}
+                  className="text-xl font-bold text-[#1A4242]"
+                >
+                  {product.price}
+                </motion.p>
               </motion.div>
             ))}
           </div>
