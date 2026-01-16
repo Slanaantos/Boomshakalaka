@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true, // Necessário para export estático
   },
   compress: true,
   poweredByHeader: false,
+  trailingSlash: true, // Ajuda com roteamento em Apache
 };
 
 export default nextConfig;
