@@ -21,7 +21,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-sm"
           >
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-white/80">Web Performance & SaaS Development</span>
+            <span className="text-white/80">Sites Profissionais & Automação Inteligente</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -29,14 +29,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-              Codificando o Futuro
+              Transforme Visitantes
             </span>
             <br />
             <span className="bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">
-              da sua Operação Digital
+              em Clientes Fiéis
             </span>
           </motion.h1>
 
@@ -45,9 +45,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto text-balance"
+            className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto text-balance"
           >
-            Sites ultra-velozes, fluxos inteligentes no n8n e ecossistemas SaaS desenhados para escala.
+            Sites que carregam em 1 segundo e vendem 24 horas por dia. Automatize seu negócio e cresça sem limites.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -77,28 +77,28 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 max-w-3xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 pt-12 lg:pt-16 max-w-3xl mx-auto"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2">
-                <Zap className="w-6 h-6 text-accent" />
-                <span className="text-3xl font-bold text-white">100</span>
+                <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-accent" />
+                <span className="text-2xl lg:text-3xl font-bold text-white">100</span>
               </div>
-              <p className="text-white/60 text-sm">PageSpeed Score</p>
+              <p className="text-white/60 text-xs lg:text-sm">Sites Ultra-Rápidos</p>
             </div>
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2">
-                <Code2 className="w-6 h-6 text-accent" />
-                <span className="text-3xl font-bold text-white">90%</span>
+                <Code2 className="w-5 h-5 lg:w-6 lg:h-6 text-accent" />
+                <span className="text-2xl lg:text-3xl font-bold text-white">90%</span>
               </div>
-              <p className="text-white/60 text-sm">Automação de Tarefas</p>
+              <p className="text-white/60 text-xs lg:text-sm">Economia de Tempo</p>
             </div>
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2">
-                <Sparkles className="w-6 h-6 text-accent" />
-                <span className="text-3xl font-bold text-white">47+</span>
+                <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-accent" />
+                <span className="text-2xl lg:text-3xl font-bold text-white">47+</span>
               </div>
-              <p className="text-white/60 text-sm">Projetos Entregues</p>
+              <p className="text-white/60 text-xs lg:text-sm">Clientes Felizes</p>
             </div>
           </motion.div>
         </div>

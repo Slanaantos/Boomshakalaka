@@ -16,7 +16,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const whatsappNumber = "5511999999999";
+    const whatsappNumber = "5511970982930";
     const message = `Olá! Meu nome é ${formData.name}.\n\nEmail: ${formData.email}\n\nMensagem: ${formData.message}`;
 
     window.open(
@@ -36,19 +36,19 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto mb-16 p-12 rounded-3xl bg-gradient-to-br from-accent/20 to-purple-500/20 border border-white/10 text-center"
+          className="max-w-4xl mx-auto mb-12 lg:mb-16 p-6 lg:p-12 rounded-2xl lg:rounded-3xl bg-gradient-to-br from-accent/20 to-purple-500/20 border border-white/10 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               Chega de sites lentos e processos manuais
             </span>
           </h2>
-          <p className="text-xl text-white/70 mb-8">
+          <p className="text-lg lg:text-xl text-white/70 mb-6 lg:mb-8">
             Vamos elevar o nível da sua operação digital?
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-effect">
+          <div className="inline-flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 rounded-full glass-effect">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-white/80">Disponível para novos projetos</span>
+            <span className="text-white/80 text-sm lg:text-base">Disponível para novos projetos</span>
           </div>
         </motion.div>
 
@@ -58,12 +58,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-center mb-12"
+            className="text-center mb-8 lg:mb-12"
           >
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 lg:mb-4">
               Vamos conversar sobre seu projeto
             </h3>
-            <p className="text-white/60">
+            <p className="text-white/60 text-sm lg:text-base">
               Preencha o formulário e inicie uma conversa no WhatsApp
             </p>
           </motion.div>
@@ -74,7 +74,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="space-y-6 p-8 rounded-2xl glass-effect"
+            className="space-y-5 lg:space-y-6 p-6 lg:p-8 rounded-2xl glass-effect"
           >
             {/* Name Field */}
             <div className="space-y-2">
