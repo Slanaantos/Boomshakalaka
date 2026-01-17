@@ -10,24 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   {
     icon: Code2,
-    title: "Performance Extrema",
-    description: "Sites com Core Web Vitals perfeitos. Carregamento instantâneo e experiência fluida que converte.",
-    stat: "< 1s",
-    label: "First Contentful Paint"
+    title: "Sites Ultra-Rápidos",
+    description: "Seu site carrega instantaneamente. Visitantes não esperam, eles compram. Performance que realmente vende.",
+    stat: "3x",
+    label: "Mais conversões"
   },
   {
     icon: Zap,
-    title: "Automação Inteligente",
-    description: "Fluxos n8n que eliminam trabalho repetitivo. Integre sistemas e aumente produtividade em 10x.",
+    title: "Automatize Tudo",
+    description: "Pare de fazer trabalho manual. Conecte seus sistemas e deixe a tecnologia trabalhar por você 24/7.",
     stat: "80%",
-    label: "Redução de tempo manual"
+    label: "Menos trabalho repetitivo"
   },
   {
     icon: Layers,
-    title: "Arquitetura Escalável",
-    description: "SaaS prontos para crescer. Infraestrutura moderna que suporta de 100 a 1M de usuários.",
-    stat: "99.9%",
-    label: "Uptime garantido"
+    title: "Pronto Para Crescer",
+    description: "Seu negócio vai explodir? Sua tecnologia está pronta. De 10 a 10.000 clientes sem reescrever tudo.",
+    stat: "10x",
+    label: "Capacidade de escala"
   }
 ];
 
@@ -89,13 +89,13 @@ export default function ScrollShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[300vh] bg-background">
+    <section ref={sectionRef} className="relative lg:min-h-[300vh] bg-background py-20 lg:py-0">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Fixed Image Side */}
           <div
             ref={imageRef}
-            className="lg:sticky lg:top-32 h-screen flex items-center justify-center"
+            className="lg:sticky lg:top-32 h-auto lg:h-screen flex items-center justify-center mb-12 lg:mb-0"
           >
             <div className="relative w-full max-w-lg">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-accent/20 to-blue-500/20 backdrop-blur-xl border border-white/10 flex items-center justify-center overflow-hidden">
@@ -117,27 +117,27 @@ export default function ScrollShowcase() {
           </div>
 
           {/* Scrolling Content Side */}
-          <div className="space-y-[50vh] py-32">
+          <div className="space-y-16 lg:space-y-[50vh] lg:py-32">
             {features.map((feature, index) => (
               <div
                 key={index}
                 id={`feature-${index}`}
-                className="space-y-6"
+                className="space-y-4 lg:space-y-6"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
-                  <feature.icon className="w-8 h-8 text-accent" />
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 lg:w-8 lg:h-8 text-accent" />
                 </div>
 
-                <h3 className="text-4xl md:text-5xl font-bold text-white">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                   {feature.title}
                 </h3>
 
-                <p className="text-xl text-white/60 leading-relaxed">
+                <p className="text-lg lg:text-xl text-white/60 leading-relaxed">
                   {feature.description}
                 </p>
 
-                <div className="pt-6 border-t border-white/10">
-                  <div className="text-5xl font-black bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">
+                <div className="pt-4 lg:pt-6 border-t border-white/10">
+                  <div className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">
                     {feature.stat}
                   </div>
                   <p className="text-white/40 text-sm mt-2">{feature.label}</p>
