@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lee F Alive - Redesign by SLAN Design",
-  description: "Redesign demonstrativo da marca Lee F Alive - Streetwear básico, atemporal e sustentável. Verão 2025 - Coleção Basics.",
+  title: "Urban Style - Streetwear Premium | Portfolio SLAN Design",
+  description: "E-commerce moderno de streetwear com animações impactantes, parallax scrolling e experiência de compra fluida. Projeto demonstrativo by SLAN Design.",
   openGraph: {
-    title: "Lee F Alive - Redesign by SLAN Design",
-    description: "Redesign demonstrativo focado em performance e experiência do usuário",
-    images: ["/images/portfolio/leef/hero.jpg"],
+    title: "Urban Style - Streetwear Premium | Portfolio SLAN Design",
+    description: "Loja virtual moderna com foco em streetwear premium, animações impactantes e experiência de compra fluida",
+    images: ["/og-urban.jpg"],
   },
 };
 
-export default function LeefLayout({
+export default function UrbanLayout({
   children,
 }: {
   children: React.ReactNode;

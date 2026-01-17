@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Generoso Locações - Redesign by SLAN Design",
-  description: "Redesign demonstrativo da Generoso Locações - Can-Am Spyder: viaje com o conforto de um carro e a adrenalina de uma moto. Locação de veículos exclusivos.",
+  title: "Cuesta Adventure - Turismo Off-Road | Portfolio SLAN Design",
+  description: "Landing page dinâmica para passeios de buggy, quadriciclo e moto na Cuesta de Botucatu. Galeria interativa, sistema de reservas e animações avançadas. By SLAN Design.",
   openGraph: {
-    title: "Generoso Locações - Redesign by SLAN Design",
-    description: "Landing page moderna e otimizada para conversão, focada em experiências inesquecíveis",
-    images: ["/images/portfolio/generoso/hero.jpg"],
+    title: "Cuesta Adventure - Turismo Off-Road | Portfolio SLAN Design",
+    description: "Passeios off-road emocionantes na Cuesta de Botucatu com galeria interativa e sistema de reservas",
+    images: ["/og-cuesta.jpg"],
   },
 };
 
-export default function GenerosoLayout({
+export default function CuestaLayout({
   children,
 }: {
   children: React.ReactNode;

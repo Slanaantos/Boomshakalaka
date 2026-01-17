@@ -63,7 +63,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.a
               key={project.title}
@@ -125,22 +125,6 @@ export default function Portfolio() {
             </motion.a>
           ))}
         </div>
-
-        {/* View More CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg glass-effect text-white font-semibold hover:border-accent/50 transition-all duration-200 hover:scale-105"
-          >
-            Ver mais projetos
-            <ExternalLink className="w-5 h-5" />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

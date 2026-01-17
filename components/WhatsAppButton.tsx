@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511970982930";
   const defaultMessage = "Olá! Gostaria de saber mais sobre os serviços da SLAN Design.";
 
   return (
