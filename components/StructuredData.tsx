@@ -3,11 +3,11 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "SLAN Design",
-    "description": "Sites ultra-velozes, fluxos inteligentes no n8n e ecossistemas SaaS desenhados para escala. Especialistas em Web Performance, Automações e Desenvolvimento SaaS.",
+    "description": "Sites ultra-rápidos que vendem 24 horas por dia. Automatize processos e cresça sem limites. Mais de 50 empresas atendidas com 100% de satisfação.",
     "url": "https://slandesign.com",
     "logo": "https://slandesign.com/logo.png",
     "image": "https://slandesign.com/og-image.png",
-    "telephone": "+55-11-99999-9999",
+    "telephone": "+55-11-97098-2930",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BR"
@@ -19,21 +19,21 @@ export default function StructuredData() {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Desenvolvimento Web sob medida",
-        "description": "Sites e aplicações web de alta performance com Next.js, otimizados para SEO e Core Web Vitals",
+        "name": "Sites Profissionais",
+        "description": "Sites ultra-rápidos que vendem 3x mais. Design moderno, responsivo e otimizado para conversão.",
         "category": "Web Development"
       },
       {
         "@type": "Offer",
-        "name": "Automação de Processos com n8n",
-        "description": "Conectamos suas ferramentas e automatizamos 90% das suas tarefas repetitivas com fluxos inteligentes",
+        "name": "Automação de Processos",
+        "description": "Pare de fazer trabalho manual. Automatize 80% das tarefas repetitivas e foque no que importa.",
         "category": "Automation"
       },
       {
         "@type": "Offer",
-        "name": "Consultoria de SaaS",
-        "description": "Dashboards, bancos de dados e sistemas escaláveis para seu negócio digital",
-        "category": "SaaS Development"
+        "name": "Sistemas Sob Medida",
+        "description": "Dashboards, plataformas e sistemas escaláveis prontos para crescer junto com você.",
+        "category": "Custom Software"
       }
     ],
     "aggregateRating": {
@@ -44,7 +44,7 @@ export default function StructuredData() {
       "worstRating": "1"
     },
     "priceRange": "$$$$",
-    "serviceType": ["Web Design", "Software Development", "Automation", "SaaS Consulting"]
+    "serviceType": ["Criação de Sites", "Desenvolvimento Web", "Automação", "Design Digital"]
   };
 
   return (
