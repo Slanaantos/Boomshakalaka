@@ -3,18 +3,20 @@ import "./globals.css";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "SLAN Design | Web Performance, Automações n8n & Desenvolvimento SaaS",
-  description: "Sites ultra-velozes, fluxos inteligentes no n8n e ecossistemas SaaS desenhados para escala. Especialistas em Next.js, TypeScript e automação de processos.",
+  title: "SLAN Design | Sites Que Vendem | Transforme Visitantes em Clientes",
+  description: "Sites ultra-rápidos que vendem 24h por dia. Automatize seu negócio e cresça sem limites. Mais de 50 empresas confiam na SLAN para sua presença digital.",
   keywords: [
-    "web design premium",
-    "desenvolvimento next.js",
-    "automação n8n",
-    "desenvolvimento saas",
-    "web performance",
-    "typescript",
-    "tailwind css",
-    "seo técnico",
-    "core web vitals"
+    "criação de sites",
+    "sites profissionais",
+    "desenvolvimento web",
+    "site que vende",
+    "automação de processos",
+    "sites rápidos",
+    "design moderno",
+    "loja virtual",
+    "landing page",
+    "site responsivo",
+    "seo otimizado"
   ],
   authors: [{ name: "SLAN Design" }],
   creator: "SLAN Design",
@@ -24,8 +26,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "SLAN Design | Codificando o Futuro da sua Operação Digital",
-    description: "Sites ultra-velozes, fluxos inteligentes no n8n e ecossistemas SaaS desenhados para escala.",
+    title: "SLAN Design | Transforme Visitantes em Clientes Fiéis",
+    description: "Sites ultra-rápidos que vendem 24h por dia. Clientes vendem 3x mais depois do redesign. Automatize processos e cresça sem limites.",
     url: "https://slandesign.com",
     siteName: "SLAN Design",
     images: [
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SLAN Design - Web Performance & SaaS Development",
+        alt: "SLAN Design - Sites Que Vendem e Automação Inteligente",
       },
     ],
     locale: "pt_BR",
@@ -41,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SLAN Design | Web Performance & SaaS Development",
-    description: "Sites ultra-velozes, fluxos inteligentes no n8n e ecossistemas SaaS desenhados para escala.",
+    title: "SLAN Design | Sites Que Vendem",
+    description: "Sites ultra-rápidos que vendem 24h por dia. Mais de 50 empresas confiam na SLAN.",
     images: ["/og-image.png"],
   },
   robots: {

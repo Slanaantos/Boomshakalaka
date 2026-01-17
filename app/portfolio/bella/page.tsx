@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, UtensilsCrossed, Clock, MapPin, Phone, Wine, ChefHat, Heart, Star, Calendar } from "lucide-react";
 import Link from "next/link";
-import DemoBadge from "@/components/Demobadge";
+import PortfolioBanner from "@/components/PortfolioBanner";
 import { useRef, useState } from "react";
 
 const dishes = [
@@ -172,10 +172,10 @@ export default function BellaTavolaShowcase() {
 
   return (
     <div className="min-h-screen bg-amber-50">
-      <DemoBadge />
+      <PortfolioBanner />
 
       {/* Back Button */}
-      <div className="container mx-auto px-4 py-6 relative z-50">
+      <div className="container mx-auto px-4 pt-24 pb-6 relative z-40">
         <Link
           href="/#portfolio"
           className="inline-flex items-center gap-2 text-stone-800 hover:text-amber-700 transition-colors"

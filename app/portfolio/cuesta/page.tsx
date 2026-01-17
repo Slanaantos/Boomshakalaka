@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, Mountain, Bike, Calendar, Shield, Users, MapPin, Clock, Trophy, Camera } from "lucide-react";
 import Link from "next/link";
-import DemoBadge from "@/components/Demobadge";
+import PortfolioBanner from "@/components/PortfolioBanner";
 import { useRef, useState } from "react";
 
 const tours = [
@@ -115,10 +115,10 @@ export default function CuestaAdventureShowcase() {
 
   return (
     <div className="min-h-screen bg-stone-950 text-white">
-      <DemoBadge />
+      <PortfolioBanner />
 
       {/* Back Button */}
-      <div className="container mx-auto px-4 py-6 relative z-50">
+      <div className="container mx-auto px-4 pt-24 pb-6 relative z-40">
         <Link
           href="/#portfolio"
           className="inline-flex items-center gap-2 text-white hover:text-orange-400 transition-colors"
