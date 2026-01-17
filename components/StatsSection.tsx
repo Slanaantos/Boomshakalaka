@@ -9,28 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=400&fit=crop&q=80",
+    emoji: "📈",
     value: 300,
     suffix: "%",
     label: "Mais vendas",
     description: "Clientes vendem 3x mais depois do redesign"
   },
   {
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&q=80",
+    emoji: "🏢",
     value: 50,
     suffix: "+",
     label: "Empresas atendidas",
     description: "De startups a empresas consolidadas"
   },
   {
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&q=80",
+    emoji: "⚡",
     value: 98,
     suffix: "%",
     label: "Sites ultra-rápidos",
     description: "Velocidade que impressiona e converte"
   },
   {
-    image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=400&fit=crop&q=80",
+    emoji: "⭐",
     value: 100,
     suffix: "%",
     label: "Clientes satisfeitos",
@@ -133,13 +133,9 @@ export default function StatsSection() {
               {/* Card */}
               <div className="relative h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-accent/50 transition-all duration-300">
                 <div className="space-y-4 lg:space-y-6">
-                  {/* Image */}
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
-                    <img
-                      src={stat.image}
-                      alt={stat.label}
-                      className="w-full h-full object-cover"
-                    />
+                  {/* Emoji Icon */}
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-blue-500/10 border border-white/10 flex items-center justify-center">
+                    <span className="text-3xl lg:text-4xl">{stat.emoji}</span>
                   </div>
 
                   {/* Number */}
