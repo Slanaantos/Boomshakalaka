@@ -5,9 +5,9 @@ export default function Footer() {
 
   const links = {
     services: [
-      { label: "Web Performance", href: "#servicos" },
-      { label: "Automações n8n", href: "#servicos" },
-      { label: "SaaS Development", href: "#servicos" },
+      { label: "Sites Profissionais", href: "#servicos" },
+      { label: "Automação de Processos", href: "#servicos" },
+      { label: "Sistemas Sob Medida", href: "#servicos" },
     ],
     company: [
       { label: "Portfolio", href: "#portfolio" },
@@ -30,7 +30,7 @@ export default function Footer() {
               SLAN<span className="text-white">.</span>
             </a>
             <p className="text-white/60 text-sm">
-              Codificando o futuro da sua operação digital com performance e inovação.
+              Transformamos sua presença digital em uma máquina de vendas que funciona 24 horas por dia.
             </p>
           </div>
 
