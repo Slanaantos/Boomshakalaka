@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lolita Criativa - Redesign by SLAN Design",
-  description: "Redesign demonstrativo da Lolita Criativa - Acessórios personalizados de luxo. Seu toque de exclusividade com sofisticação e carinho.",
+  title: "Bella Tavola - Restaurante Italiano | Portfolio SLAN Design",
+  description: "Website elegante para restaurante italiano premium. Menu gourmet, carta de vinhos, galeria do ambiente e sistema de reservas. Cucina Italiana Autentica. By SLAN Design.",
   openGraph: {
-    title: "Lolita Criativa - Redesign by SLAN Design",
-    description: "Redesign criativo e impactante, destacando acessórios personalizados com animações elegantes",
-    images: ["/images/portfolio/lolita/hero.jpg"],
+    title: "Bella Tavola - Restaurante Italiano | Portfolio SLAN Design",
+    description: "Website elegante para restaurante italiano autêntico com menu gourmet e ambiente sofisticado",
+    images: ["/og-bella.jpg"],
   },
 };
 
-export default function LolitaLayout({
+export default function BellaLayout({
   children,
 }: {
   children: React.ReactNode;

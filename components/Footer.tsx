@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="relative py-16 px-4 border-t border-white/10">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <a href="#" className="text-3xl font-bold bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">
@@ -66,25 +66,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Redes Sociais</h4>
-            <div className="flex gap-3">
-              {links.social.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/50 transition-all duration-200"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5 text-white/60" />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
