@@ -9,7 +9,7 @@ const projects = [
     title: "Urban Style",
     category: "E-commerce Streetwear",
     description: "Loja virtual moderna com foco em streetwear premium, animações impactantes e experiência de compra fluida.",
-    image: "/images/portfolio/urban/hero.jpg",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=400&fit=crop",
     stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
     gradient: "from-yellow-500 to-orange-500",
     link: "/portfolio/urban/",
@@ -19,7 +19,7 @@ const projects = [
     title: "Cuesta Adventure",
     category: "Turismo & Aventura",
     description: "Landing page dinâmica para passeios off-road na Cuesta de Botucatu com galeria interativa e sistema de reservas.",
-    image: "/images/portfolio/cuesta/hero.jpg",
+    image: "https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?w=800&h=400&fit=crop",
     stack: ["Next.js 15", "TypeScript", "Framer Motion"],
     gradient: "from-orange-600 to-amber-500",
     link: "/portfolio/cuesta/",
@@ -29,7 +29,7 @@ const projects = [
     title: "Bella Tavola",
     category: "Gastronomia Premium",
     description: "Website elegante para restaurante italiano autêntico, destacando menu gourmet e ambiente sofisticado.",
-    image: "/images/portfolio/bella/hero.jpg",
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=400&fit=crop",
     stack: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
     gradient: "from-amber-600 to-yellow-500",
     link: "/portfolio/bella/",
@@ -77,9 +77,14 @@ export default function Portfolio() {
               onMouseLeave={() => setHoveredIndex(null)}
               className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 card-hover cursor-pointer block"
             >
-              {/* Image Placeholder with Gradient */}
-              <div className={`relative h-64 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300" />
+              {/* Hero Image */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/60 transition-all duration-300" />
 
                 {/* View Project Button (visible on hover) */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
