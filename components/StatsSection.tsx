@@ -12,29 +12,29 @@ const stats = [
     icon: TrendingUp,
     value: 300,
     suffix: "%",
-    label: "Aumento médio em conversão",
-    description: "Nossos clientes veem resultados reais"
+    label: "Mais vendas",
+    description: "Clientes vendem 3x mais depois do redesign"
   },
   {
     icon: Users,
     value: 50,
     suffix: "+",
-    label: "Projetos entregues",
+    label: "Empresas atendidas",
     description: "De startups a empresas consolidadas"
   },
   {
     icon: Zap,
     value: 98,
     suffix: "%",
-    label: "Performance Score",
-    description: "Core Web Vitals perfeitos"
+    label: "Sites ultra-rápidos",
+    description: "Velocidade que impressiona e converte"
   },
   {
     icon: Award,
     value: 100,
     suffix: "%",
-    label: "Satisfação dos clientes",
-    description: "Parcerias de longo prazo"
+    label: "Clientes satisfeitos",
+    description: "Parcerias que duram anos"
   }
 ];
 
@@ -108,19 +108,19 @@ export default function StatsSection() {
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6">
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Resultados que Falam
+              Números Que Provam
             </span>
           </h2>
-          <p className="text-xl text-white/60">
-            Números reais de projetos reais. Performance que impacta o bottom line.
+          <p className="text-lg lg:text-xl text-white/60">
+            Resultados reais de clientes reais. Seu negócio pode ser o próximo.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -131,26 +131,26 @@ export default function StatsSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative h-full p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-accent/50 transition-all duration-300">
-                <div className="space-y-6">
+              <div className="relative h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-accent/50 transition-all duration-300">
+                <div className="space-y-4 lg:space-y-6">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
-                    <stat.icon className="w-7 h-7 text-accent" />
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
+                    <stat.icon className="w-6 h-6 lg:w-7 lg:h-7 text-accent" />
                   </div>
 
                   {/* Number */}
-                  <div className="space-y-2">
-                    <div className="text-6xl font-black bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">
+                  <div className="space-y-1 lg:space-y-2">
+                    <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">
                       <span className="counter">0</span>
                       <span>{stat.suffix}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-lg lg:text-xl font-bold text-white">
                       {stat.label}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/50 text-sm">
+                  <p className="text-white/50 text-sm leading-relaxed">
                     {stat.description}
                   </p>
                 </div>

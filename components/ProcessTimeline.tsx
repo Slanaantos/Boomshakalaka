@@ -11,34 +11,34 @@ const steps = [
   {
     icon: Lightbulb,
     number: "01",
-    title: "Descoberta & Estratégia",
-    description: "Mergulhamos profundamente no seu negócio. Mapeamos processos, identificamos gargalos e traçamos objetivos claros.",
+    title: "Entender Seu Negócio",
+    description: "Conversamos, ouvimos e entendemos o que você precisa. Mapeamos seus objetivos e criamos uma estratégia clara.",
     duration: "1-2 semanas",
-    deliverables: ["Análise de concorrência", "Definição de KPIs", "Roadmap técnico"]
+    deliverables: ["Análise do mercado", "Plano de ação", "Proposta personalizada"]
   },
   {
     icon: PenTool,
     number: "02",
-    title: "Design & Prototipagem",
-    description: "Criamos experiências que convertem. Design system completo, protótipos interativos e testes de usabilidade.",
+    title: "Criar o Design",
+    description: "Desenhamos telas bonitas e fáceis de usar. Você vê como vai ficar antes de construir qualquer coisa.",
     duration: "2-3 semanas",
-    deliverables: ["Design system", "Protótipos hi-fi", "Guia de marca"]
+    deliverables: ["Protótipos visuais", "Testes com usuários", "Identidade visual"]
   },
   {
     icon: Code,
     number: "03",
-    title: "Desenvolvimento",
-    description: "Código limpo, performático e escalável. Arquitetura moderna com as melhores práticas do mercado.",
+    title: "Construir o Projeto",
+    description: "Transformamos o design em realidade. Site rápido, seguro e preparado para crescer junto com você.",
     duration: "4-8 semanas",
-    deliverables: ["MVP funcional", "Testes automatizados", "Documentação técnica"]
+    deliverables: ["Site funcionando", "Testes de qualidade", "Treinamento da equipe"]
   },
   {
     icon: Rocket,
     number: "04",
-    title: "Launch & Otimização",
-    description: "Deploy estratégico e monitoramento contínuo. Análise de dados e otimizações baseadas em performance real.",
-    duration: "Contínuo",
-    deliverables: ["Deploy em produção", "Monitoring setup", "A/B testing"]
+    title: "Lançar e Melhorar",
+    description: "Colocamos no ar e acompanhamos os resultados. Ajustamos o que for necessário para você vender mais.",
+    duration: "Sempre",
+    deliverables: ["Site no ar", "Suporte contínuo", "Melhorias baseadas em dados"]
   }
 ];
 
@@ -105,14 +105,14 @@ export default function ProcessTimeline() {
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6">
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Nosso Processo
+              Como Trabalhamos
             </span>
           </h2>
-          <p className="text-xl text-white/60">
-            Do conceito ao launch. Um processo refinado que entrega resultados previsíveis.
+          <p className="text-lg lg:text-xl text-white/60">
+            Do primeiro contato ao site no ar. Passo a passo transparente e sem surpresas.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function ProcessTimeline() {
           </div>
 
           {/* Steps */}
-          <div className="space-y-32">
+          <div className="space-y-16 lg:space-y-32">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -139,19 +139,19 @@ export default function ProcessTimeline() {
               >
                 {/* Content */}
                 <div className={index % 2 === 0 ? "lg:pr-16" : "lg:pl-16 lg:order-2"}>
-                  <div className="space-y-6">
+                  <div className="space-y-4 lg:space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
-                        <step.icon className="w-8 h-8 text-accent" />
+                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
+                        <step.icon className="w-7 h-7 lg:w-8 lg:h-8 text-accent" />
                       </div>
-                      <span className="text-6xl font-black text-white/5">{step.number}</span>
+                      <span className="text-5xl lg:text-6xl font-black text-white/5">{step.number}</span>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
                       {step.title}
                     </h3>
 
-                    <p className="text-lg text-white/60 leading-relaxed">
+                    <p className="text-base lg:text-lg text-white/60 leading-relaxed">
                       {step.description}
                     </p>
 
