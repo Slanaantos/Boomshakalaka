@@ -9,21 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop&q=80",
+    emoji: "⚡",
     title: "Sites Ultra-Rápidos",
     description: "Seu site carrega instantaneamente. Visitantes não esperam, eles compram. Performance que realmente vende.",
     stat: "3x",
     label: "Mais conversões"
   },
   {
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop&q=80",
+    emoji: "🤖",
     title: "Automatize Tudo",
     description: "Pare de fazer trabalho manual. Conecte seus sistemas e deixe a tecnologia trabalhar por você 24/7.",
     stat: "80%",
     label: "Menos trabalho repetitivo"
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop&q=80",
+    emoji: "🚀",
     title: "Pronto Para Crescer",
     description: "Seu negócio vai explodir? Sua tecnologia está pronta. De 10 a 10.000 clientes sem reescrever tudo.",
     stat: "10x",
@@ -129,12 +129,8 @@ export default function ScrollShowcase() {
                 id={`feature-${index}`}
                 className="space-y-4 lg:space-y-6"
               >
-                <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl bg-gradient-to-br from-accent/10 to-blue-500/10 border border-white/10 flex items-center justify-center">
+                  <span className="text-5xl lg:text-6xl">{feature.emoji}</span>
                 </div>
 
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">

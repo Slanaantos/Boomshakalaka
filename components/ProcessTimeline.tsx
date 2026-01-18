@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop&q=80",
+    emoji: "💡",
     number: "01",
     title: "Entender Seu Negócio",
     description: "Conversamos, ouvimos e entendemos o que você precisa. Mapeamos seus objetivos e criamos uma estratégia clara.",
@@ -16,7 +16,7 @@ const steps = [
     deliverables: ["Análise do mercado", "Plano de ação", "Proposta personalizada"]
   },
   {
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=600&fit=crop&q=80",
+    emoji: "🎨",
     number: "02",
     title: "Criar o Design",
     description: "Desenhamos telas bonitas e fáceis de usar. Você vê como vai ficar antes de construir qualquer coisa.",
@@ -24,7 +24,7 @@ const steps = [
     deliverables: ["Protótipos visuais", "Testes com usuários", "Identidade visual"]
   },
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=600&fit=crop&q=80",
+    emoji: "⚙️",
     number: "03",
     title: "Construir o Projeto",
     description: "Transformamos o design em realidade. Site rápido, seguro e preparado para crescer junto com você.",
@@ -32,7 +32,7 @@ const steps = [
     deliverables: ["Site funcionando", "Testes de qualidade", "Treinamento da equipe"]
   },
   {
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=600&fit=crop&q=80",
+    emoji: "🚀",
     number: "04",
     title: "Lançar e Melhorar",
     description: "Colocamos no ar e acompanhamos os resultados. Ajustamos o que for necessário para você vender mais.",
@@ -140,12 +140,8 @@ export default function ProcessTimeline() {
                 <div className={index % 2 === 0 ? "lg:pr-16" : "lg:pl-16 lg:order-2"}>
                   <div className="space-y-4 lg:space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
-                        <img
-                          src={step.image}
-                          alt={step.title}
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-accent/10 to-blue-500/10 border border-white/10 flex items-center justify-center">
+                        <span className="text-3xl lg:text-4xl">{step.emoji}</span>
                       </div>
                       <span className="text-5xl lg:text-6xl font-black text-white/5">{step.number}</span>
                     </div>
@@ -184,12 +180,8 @@ export default function ProcessTimeline() {
 
                 {/* Visual Element */}
                 <div className={index % 2 === 0 ? "lg:pl-16 lg:order-2" : "lg:pr-16"}>
-                  <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="aspect-square rounded-3xl bg-gradient-to-br from-accent/10 to-blue-500/10 border border-white/10 flex items-center justify-center">
+                    <span className="text-9xl">{step.emoji}</span>
                   </div>
                 </div>
               </div>
