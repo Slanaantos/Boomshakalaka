@@ -5,6 +5,8 @@ import { ArrowLeft, UtensilsCrossed, Clock, MapPin, Phone, Wine, ChefHat, Heart,
 import Link from "next/link";
 import PortfolioBanner from "@/components/PortfolioBanner";
 import { useRef, useState } from "react";
+import type { SyntheticEvent } from "react";
+import { fallbackImage } from "@/lib/fallbackImage";
 
 const dishes = [
   {
@@ -169,6 +171,9 @@ export default function BellaTavolaShowcase() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.src = fallbackImage;
+  };
 
   return (
     <div className="min-h-screen bg-amber-50">
@@ -301,6 +306,9 @@ export default function BellaTavolaShowcase() {
                 <img
                   src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&h=800&fit=crop"
                   alt="Chef preparando pasta"
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -352,6 +360,9 @@ export default function BellaTavolaShowcase() {
                   <motion.img
                     src={dish.image}
                     alt={dish.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6 }}
@@ -415,6 +426,9 @@ export default function BellaTavolaShowcase() {
                   <img
                     src={wine.image}
                     alt={wine.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -488,6 +502,9 @@ export default function BellaTavolaShowcase() {
                 <img
                   src={image}
                   alt={`Ambiente ${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -526,6 +543,9 @@ export default function BellaTavolaShowcase() {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div>

@@ -45,59 +45,61 @@ export default function StatsSection() {
     const section = sectionRef.current;
     if (!section) return;
 
-    stats.forEach((stat, index) => {
-      const element = section.querySelector(`#stat-${index}`);
-      const counter = element?.querySelector('.counter');
+    const ctx = gsap.context(() => {
+      stats.forEach((stat, index) => {
+        const element = section.querySelector(`#stat-${index}`);
+        const counter = element?.querySelector(".counter");
 
-      if (!counter) return;
+        if (!element || !counter) return;
 
-      gsap.fromTo(
-        counter,
-        { innerHTML: 0 },
-        {
-          innerHTML: stat.value,
-          duration: 2,
-          ease: "power2.out",
-          snap: { innerHTML: 1 },
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            end: "top 50%",
-            toggleActions: "play none none none",
+        gsap.fromTo(
+          counter,
+          { innerHTML: 0 },
+          {
+            innerHTML: stat.value,
+            duration: 2,
+            ease: "power2.out",
+            snap: { innerHTML: 1 },
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "top 50%",
+              toggleActions: "play none none none",
+            },
+            onUpdate: function() {
+              const value = Math.ceil(this.targets()[0].innerHTML);
+              counter.innerHTML = value.toString();
+            }
+          }
+        );
+
+        // Card entrance animation
+        gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.9
           },
-          onUpdate: function() {
-            const value = Math.ceil(this.targets()[0].innerHTML);
-            counter.innerHTML = value.toString();
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 85%",
+              end: "top 60%",
+              scrub: 1,
+            }
           }
-        }
-      );
-
-      // Card entrance animation
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            end: "top 60%",
-            scrub: 1,
-          }
-        }
-      );
-    });
+        );
+      });
+    }, section);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ctx.revert();
     };
   }, []);
 

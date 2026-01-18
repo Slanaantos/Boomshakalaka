@@ -43,53 +43,57 @@ export default function ScrollShowcase() {
 
     // Only pin on desktop (lg breakpoint = 1024px)
     const mm = gsap.matchMedia();
+    const ctx = gsap.context(() => {
+      mm.add("(min-width: 1024px)", () => {
+        // Pin the image while text scrolls (desktop only)
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: "bottom bottom",
+          pin: image,
+          pinSpacing: false,
+        });
 
-    mm.add("(min-width: 1024px)", () => {
-      // Pin the image while text scrolls (desktop only)
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: "bottom bottom",
-        pin: image,
-        pinSpacing: false,
-      });
+        // Animate each feature
+        features.forEach((_, index) => {
+          const featureElement = section.querySelector(`#feature-${index}`);
 
-      // Animate each feature
-      features.forEach((_, index) => {
-        const featureElement = section.querySelector(`#feature-${index}`);
+          if (!featureElement) return;
 
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: featureElement,
-            start: "top center",
-            end: "bottom center",
-            scrub: 1,
-            onEnter: () => {
-              // Change image opacity/scale based on active feature
-              gsap.to(image, {
-                scale: 1.05,
-                duration: 0.6,
-                ease: "power2.out"
-              });
-            },
-            onLeave: () => {
-              gsap.to(image, {
-                scale: 1,
-                duration: 0.6,
-                ease: "power2.out"
-              });
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: featureElement,
+              start: "top center",
+              end: "bottom center",
+              scrub: 1,
+              onEnter: () => {
+                // Change image opacity/scale based on active feature
+                gsap.to(image, {
+                  scale: 1.05,
+                  duration: 0.6,
+                  ease: "power2.out"
+                });
+              },
+              onLeave: () => {
+                gsap.to(image, {
+                  scale: 1,
+                  duration: 0.6,
+                  ease: "power2.out"
+                });
+              }
             }
-          }
-        })
-        .fromTo(featureElement,
-          { opacity: 0.3, x: -50 },
-          { opacity: 1, x: 0, duration: 1 }
-        );
+          })
+          .fromTo(featureElement,
+            { opacity: 0.3, x: -50 },
+            { opacity: 1, x: 0, duration: 1 }
+          );
+        });
       });
-    });
+    }, section);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      mm.revert();
+      ctx.revert();
     };
   }, []);
 

@@ -21,7 +21,8 @@ export default function Contact() {
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   };
 
