@@ -5,6 +5,8 @@ import { ArrowLeft, Mountain, Bike, Calendar, Shield, Users, MapPin, Clock, Trop
 import Link from "next/link";
 import PortfolioBanner from "@/components/PortfolioBanner";
 import { useRef, useState } from "react";
+import type { SyntheticEvent } from "react";
+import { fallbackImage } from "@/lib/fallbackImage";
 
 const tours = [
   {
@@ -112,6 +114,9 @@ export default function CuestaAdventureShowcase() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.src = fallbackImage;
+  };
 
   return (
     <div className="min-h-screen bg-stone-950 text-white">
@@ -236,6 +241,9 @@ export default function CuestaAdventureShowcase() {
                   <motion.img
                     src={tour.image}
                     alt={tour.title}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6 }}
@@ -358,6 +366,9 @@ export default function CuestaAdventureShowcase() {
                 <img
                   src={image}
                   alt={`Adventure ${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
                 <motion.div
@@ -403,6 +414,9 @@ export default function CuestaAdventureShowcase() {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div>

@@ -5,6 +5,8 @@ import { ArrowLeft, ShoppingBag, Star, Truck, Heart, Instagram, TrendingUp } fro
 import Link from "next/link";
 import PortfolioBanner from "@/components/PortfolioBanner";
 import { useRef } from "react";
+import type { SyntheticEvent } from "react";
+import { fallbackImage } from "@/lib/fallbackImage";
 
 const products = [
   {
@@ -86,6 +88,9 @@ export default function UrbanStyleShowcase() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.src = fallbackImage;
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -202,6 +207,9 @@ export default function UrbanStyleShowcase() {
                   <motion.img
                     src={collection.image}
                     alt={collection.title}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.15 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -271,6 +279,9 @@ export default function UrbanStyleShowcase() {
                   <motion.img
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -349,6 +360,9 @@ export default function UrbanStyleShowcase() {
                 <img
                   src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop"
                   alt="Urban culture"
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -359,6 +373,9 @@ export default function UrbanStyleShowcase() {
                 <img
                   src="https://images.unsplash.com/photo-1495555961986-6d4c2c4c7b8b?w=400&h=400&fit=crop"
                   alt="Street style"
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
               </motion.div>

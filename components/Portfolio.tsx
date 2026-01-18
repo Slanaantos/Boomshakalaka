@@ -1,8 +1,10 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { useRef } from "react";
+import type { SyntheticEvent } from "react";
+import { ExternalLink } from "lucide-react";
+import { fallbackImage } from "@/lib/fallbackImage";
 
 const projects = [
   {
@@ -40,7 +42,9 @@ const projects = [
 export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.src = fallbackImage;
+  };
 
   return (
     <section id="portfolio" className="py-24 px-4 relative" ref={ref}>
@@ -68,13 +72,9 @@ export default function Portfolio() {
             <motion.a
               key={project.title}
               href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 card-hover cursor-pointer block"
             >
               {/* Hero Image */}
@@ -82,6 +82,9 @@ export default function Portfolio() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  onError={handleImageError}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/60 transition-all duration-300" />
